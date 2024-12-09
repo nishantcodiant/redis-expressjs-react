@@ -10,9 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@supabase/supabase-js": "^2.47.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "ioredis": "^5.4.1"
+    "install": "^0.13.0",
+    "ioredis": "^5.4.1",
+    "npm": "^10.9.2"
   }
 }

@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node Server/src/app.js",
+    "start": "nodemon Server/src/app.js",
     "stop:server": "concurrently -k \"pkill -f 'node Server/src/app.js'\""
   },
   "dependencies": {
