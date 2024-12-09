@@ -8,13 +8,16 @@ class RedisService {
   }
 
   createRedisConnection() {
-    const redisClient = new Redis({
-      host: process.env.REDIS_HOST, // Redis host
-      port: process.env.REDIS_PORT, // Redis port
-    });
+    const redisClient = new Redis(
+      'redis://default:uO1w4ipsgLC1TAYJgBVaRIWjrh2aCfHs@redis-15474.c44.us-east-1-2.ec2.redns.redis-cloud.com:15474'
+      // {
+      //   host: process.env.REDIS_HOST, // Redis host
+      //   port: process.env.REDIS_PORT, // Redis port
+      // }
+    );
 
     redisClient.on('connect', () => {
-      console.log('Redis Connected Successfully', process.env.REDIS_HOST, process.env.REDIS_PORT);
+      console.log('Redis Connected Successfully');
     });
 
     redisClient.on('error', (error) => {

@@ -9,7 +9,7 @@ export default defineConfig({
     // port: 5173,      // You can specify a port or use the default
     proxy: {
       '/api': {
-        target: 'http://localhost:4000',
+        target: 'https://redis-expressjs-react.vercel.app',
         changeOrigin: true,
         secure: false,
       },

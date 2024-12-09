@@ -1,8 +1,8 @@
 import axios from 'axios';
-// https://project-marina-r1-express-js.vercel.app
+// https://redis-expressjs-react.vercel.app
 // http://localhost:4000
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: 'https://redis-expressjs-react.vercel.app',
   headers: {
     'Content-Type': 'application/json',
   },
