@@ -22,9 +22,9 @@ const Home = () => {
             key: 'age',
         },
         {
-            title: 'Address',
-            dataIndex: 'street',
-            key: 'street',
+            title: 'State',
+            dataIndex: 'state',
+            key: 'state',
         },
         {
             title: 'City',
