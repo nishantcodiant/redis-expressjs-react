@@ -28,13 +28,15 @@ class RedisService {
   }
 
   async setValue(key, value) {
-    console.log(`[CACHE SET] Key "${key}" set with expiration of ${expiry} seconds.`);
+    console.log(`[CACHE SET] Key "${key}" set with expiration of ${'60'} seconds.`);
     return await this.redis.set(key, JSON.stringify(value));
   }
 
   async getValue(key) {
     const data = await this.redis.get(key);
-    console.log(`[CACHE HIT] Data for key "${key}" served from Redis.`);
+    if (data?.length) {
+      console.log(`[CACHE HIT] Data for key "${key}" served from Redis.`);
+    }
     return JSON.parse(data);
   }
 

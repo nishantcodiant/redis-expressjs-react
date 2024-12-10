@@ -2,7 +2,7 @@ import axios from 'axios';
 // https://redis-expressjs-react.vercel.app
 // http://localhost:4000
 const axiosInstance = axios.create({
-  baseURL: 'https://redis-expressjs-react.vercel.app',
+  baseURL: 'http://localhost:4000',
   headers: {
     'Content-Type': 'application/json',
   },

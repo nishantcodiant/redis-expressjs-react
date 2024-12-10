@@ -12,6 +12,7 @@
     "stop:server": "concurrently -k \"pkill -f 'node Server/src/app.js'\""
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.47.3",
     "antd": "^5.22.3",
     "axios": "^1.7.9",
     "react": "^18.3.1",

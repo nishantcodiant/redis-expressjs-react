@@ -1,6 +1,7 @@
 import { Table, Button } from 'antd';
 import { useEffect, useState } from 'react';
 import { UserList } from '../Http/api';
+import { supabase } from '../Supabase';
 const Home = () => {
     const [users, setUsers] = useState([])
     const columns = [
@@ -39,10 +40,17 @@ const Home = () => {
             setUsers([...response?.data])
         }
     }
-    useEffect(() => {
-    }, [])
+    // const fetchData = async () => {
+    //     let { data: items, error } = await supabase.from('users').select('*');
+    //     if (error) console.error('Error fetching data:', error);
+    //     else setUsers([...items]);
+    // };
+    // useEffect(() => {
+    //     fetchData();
+    // }, [])
     return (
         <>
+        
             <Button
                 onClick={getUserList}
             >Fetch Users</Button>

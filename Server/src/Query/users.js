@@ -1,15 +1,15 @@
 const { supabase } = require('../Services/supabase')
-const getAllUser = async () => {
+const getAllUser = async (columns) => {
     const { data, error } = await supabase
         .from('users') // Replace with your table name
-        .select('*');            // Select all columns
+        .select(columns.join(','));  // Select all columns
 
     if (error) {
-        return false
-    } else {
-        return data
+        throw new Error(error.message); // Throw an error to propagate it
     }
-}
+    console.log(`[SUPABASE HIT] Data of the users table served from Supabase.`);
+    return data;
+};
 /**
  * @param {object} userData 
  * @returns 
@@ -19,10 +19,9 @@ const addUser = async (userData) => {
         .from('users') // Replace with your table name
         .insert(userData);
     if (error) {
-        return false
-    } else {
-        return data
+        throw new Error(error.message); // Throw an error to propagate it
     }
+    return data;
 }
 
 module.exports = { getAllUser, addUser };
