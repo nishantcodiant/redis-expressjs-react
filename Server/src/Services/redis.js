@@ -9,11 +9,18 @@ class RedisService {
 
   createRedisConnection() {
     const redisClient = new Redis(
-      'redis://default:uO1w4ipsgLC1TAYJgBVaRIWjrh2aCfHs@redis-15474.c44.us-east-1-2.ec2.redns.redis-cloud.com:15474'
+      // 'redis://default:uO1w4ipsgLC1TAYJgBVaRIWjrh2aCfHs@redis-15474.c44.us-east-1-2.ec2.redns.redis-cloud.com:15474'
+
       // {
       //   host: process.env.REDIS_HOST, // Redis host
       //   port: process.env.REDIS_PORT, // Redis port
       // }
+      {
+        host: 'redis-10147.c305.ap-south-1-1.ec2.redns.redis-cloud.com', // Replace with your Redis host
+        port: 10147, // Replace with your Redis port
+        username: 'default', // Replace with your Redis username
+        password: 'm5cbonawGy7oBcwXS3tNLSWk3iKVeYS0', // Replace with your Redis password
+      }
     );
 
     redisClient.on('connect', () => {

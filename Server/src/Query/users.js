@@ -24,4 +24,19 @@ const addUser = async (userData) => {
     return data;
 }
 
-module.exports = { getAllUser, addUser };
+
+const updateNotification = async (seen) => {
+    const { data, error } = await supabase
+        .from('notifications') // Replace with your table name
+        .update({
+            // is_active: 'true', seen: true
+            seen: seen
+        }) // Update the notification field to false
+        .eq('id', 1);
+    if (error) {
+        throw new Error(error.message); // Throw an error to propagate it
+    }
+    console.log('update', data)
+}
+
+module.exports = { getAllUser, addUser, updateNotification };
